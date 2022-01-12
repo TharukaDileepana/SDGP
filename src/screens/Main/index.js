@@ -1,6 +1,7 @@
 import React from 'react'
 import { useFocusEffect } from '@react-navigation/native';
 import { ImageBackground, Text, StyleSheet, SafeAreaView, TouchableOpacity, Alert, BackHandler } from 'react-native'
+import ImagePicker from 'react-native-image-crop-picker';
 
 const Main = ({navigation}) => {
 
@@ -28,12 +29,32 @@ const Main = ({navigation}) => {
         }, []),
     );
 
+    const takePhoto = () =>{
+        ImagePicker.openCamera({
+            width: 300,
+            height: 400,
+            cropping: true,
+          }).then(image => {
+            console.log(image);
+          });
+    }
+
+    const choosePhoto = () =>{
+        ImagePicker.openPicker({
+            width: 300,
+            height: 400,
+            cropping: true
+          }).then(image => {
+            console.log(image);
+          });
+    }
+
 
     return (
         <ImageBackground style={styles.bgi} source={require("../../img/Background.png")}>
             <SafeAreaView style={styles.area}>
-                <TouchableOpacity style={styles.btn1} onPress={() => navigation.navigate('Camera')}><Text style={styles.name1}>Take a Picture</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.btn2}><Text style={styles.name1}>Upload an Image</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.btn1} onPress={takePhoto}><Text style={styles.name1}>Take a Picture</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.btn2} onPress={choosePhoto}><Text style={styles.name1}>Upload an Image</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.btn2}><Text style={styles.name1}>Appearance</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.btn2}><Text style={styles.name1}>Encyclopedia</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.btn3} onPress={() => navigation.navigate('About')}><Text style={styles.name2}>About Us</Text></TouchableOpacity>
