@@ -8,12 +8,6 @@ import About from '../screens/About';
 
 const stack = createNativeStackNavigator();
 
-const forFade = ({ current }) => ({
-    cardStyle: {
-      opacity: current.progress,
-    },
-  });
-
 const RouteNavigation = () => {
     return (
         <NavigationContainer>

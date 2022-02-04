@@ -1,20 +1,25 @@
 import React from 'react';
-import { ImageBackground, SafeAreaView, StyleSheet, Text } from 'react-native';
+import { ImageBackground, SafeAreaView, StyleSheet, View, Text } from 'react-native';
 
-function About(props) {
+const About = () => {
     return (
         <ImageBackground 
         style = {styles.background}
-        source={require("../../img/Background.png")}>
+        source={require('../../img/Background.png')}>
 
             <SafeAreaView style = {styles.about}>
                 <Text style = {styles.head}>
-                    Developer Team
+                    About Us
                 </Text>
                 <Text style = {styles.txt}>
                     VICTRIC is a group of 2nd year undergraduate students who are following BEng (Hons) Software Engineering degree program at Informatics Institute of Technology (IIT),
                     associated with the University of Westminster
                 </Text>
+
+                <Text style = {styles.head2}>
+                    Development Team
+                </Text>
+
                 <Text style = {styles.tm1}>
                     Tharuka {'\n'} Amarasinghe
                 </Text>
@@ -68,10 +73,20 @@ const styles = StyleSheet.create({
         marginTop: '13%',
     },
 
+    head2: {
+        flex: 1,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        color: 'black',
+        fontSize: 20,
+        marginTop: '30%',
+        marginBottom: '70%',
+    },
+
     txt: {
         flex: 1,
         textAlign: 'justify',
-        marginTop: '28%',
+        marginTop: '25%',
         marginBottom: '55%',
         padding: '5%',
         fontSize: 17,
@@ -83,7 +98,7 @@ const styles = StyleSheet.create({
         flex:1,
         textAlign: 'center',
         marginLeft: '2%',
-        marginTop: '91.5%',
+        marginTop: '109.5%',
         marginBottom: '100%',
         fontSize: 16,
         color: 'black',
@@ -94,7 +109,7 @@ const styles = StyleSheet.create({
         flex:1,
         textAlign: 'center',
         marginLeft: '32%',
-        marginTop: '91.5%',
+        marginTop: '109.5%',
         marginBottom: '100%',
         fontSize: 16,
         color: 'black',
@@ -105,7 +120,7 @@ const styles = StyleSheet.create({
         flex:1,
         textAlign: 'center',
         marginLeft: '70%',
-        marginTop: '91.5%',
+        marginTop: '109.5%',
         marginBottom: '100%',
         fontSize: 16,
         color: 'black',
@@ -116,7 +131,7 @@ const styles = StyleSheet.create({
         flex:1,
         textAlign: 'center',
         marginLeft: '2%',
-        marginTop: '130%',
+        marginTop: '148%',
         marginBottom: '100%',
         fontSize: 16,
         color: 'black',
@@ -127,7 +142,7 @@ const styles = StyleSheet.create({
         flex:1,
         textAlign: 'center',
         marginLeft: '32%',
-        marginTop: '130%',
+        marginTop: '148%',
         marginBottom: '100%',
         fontSize: 16,
         color: 'black',
@@ -138,7 +153,7 @@ const styles = StyleSheet.create({
         flex:1,
         textAlign: 'center',
         marginLeft: '70%',
-        marginTop: '130%',
+        marginTop: '148%',
         marginBottom: '100%',
         fontSize: 16,
         color: 'black',
