@@ -1,165 +1,143 @@
 import React from 'react';
-import { ImageBackground, SafeAreaView, StyleSheet, Text } from 'react-native';
+import { ImageBackground, SafeAreaView, StyleSheet, View, Text, Image } from 'react-native';
 
-const About = () => {
+{/*created an array list for the team members*/ }
+const teamDetails = [
+    {
+        id: 1,
+        name: "Tharuka Amarasinghe",
+        imageUrl: "https://media-exp1.licdn.com/dms/image/C5603AQFEYVztVrOhNQ/profile-displayphoto-shrink_800_800/0/1647679381012?e=1652918400&v=beta&t=0CTBmhKMRmmIJsLv--9BHrO6B4KV41jdZqsXV8_TWTM"
+    },
+    {
+        id: 2,
+        name: "Ranul Hewage",
+        imageUrl: "https://media-exp1.licdn.com/dms/image/C4E03AQH-GyHlhdyRKg/profile-displayphoto-shrink_800_800/0/1571324393658?e=1652918400&v=beta&t=3kfwSH-Ja3EdEn_vEyDFCum2iDi7dCLlnHtgXLWy194"
+    },
+    {
+        id: 3,
+        name: "Imesh Herath",
+        imageUrl: "https://scontent.fcmb3-2.fna.fbcdn.net/v/t1.6435-9/169871005_2775027736082537_8186804939107896902_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=174925&_nc_eui2=AeH-Z28PPf5U5jeW98K8SFTQtFk-x4PKBX60WT7Hg8oFfjJPYAiE15nIm0OHtaiV4NZSafM_bX5cxxuQADgSUPdQ&_nc_ohc=EZ_iMs5EpKQAX9lpcBG&_nc_ht=scontent.fcmb3-2.fna&oh=00_AT_3Neu3V6Ivd2Jl6wSaw-C7Ndy0k_TxnWzFY2OBqh4DpQ&oe=626086EB"
+    },
+    {
+        id: 4,
+        name: "Vihanga Palihakkara",
+        imageUrl: "https://media-exp1.licdn.com/dms/image/D4E03AQE0HU4CMegbOQ/profile-displayphoto-shrink_800_800/0/1648024229984?e=1653523200&v=beta&t=kP6ks84Kp2OnjLDN4Rtp4PjgaWyFg64TWj72BBra3Xg"
+    },
+    {
+        id: 5,
+        name: "Chathumi Rubasinghe",
+        imageUrl: "https://media-exp1.licdn.com/dms/image/C4E03AQFNwVuzuv6MMQ/profile-displayphoto-shrink_800_800/0/1621837356028?e=1653523200&v=beta&t=tKsd5hr43ucknOFplroT7TWiItdg7rIOSr_Yn5sluvw"
+    },
+    {
+        id: 6,
+        name: "Isuka Premathilake",
+        imageUrl: "https://media-exp1.licdn.com/dms/image/C5603AQFTcOAjJASiDg/profile-displayphoto-shrink_800_800/0/1648018414081?e=1653523200&v=beta&t=ijXrLObZc73Dw_kxmzsMvqSGwnuZ-nq2mH5zm7G-fus"
+    },
+]
+
+function About(props) {
     return (
-        <ImageBackground 
-        style = {styles.background}
-        source={require('../../img/Background.png')}>
 
-            <SafeAreaView style = {styles.about}>
-                <Text style = {styles.head}>
-                    About Us
-                </Text>
-                <Text style = {styles.txt}>
-                    VICTRIC is a group of 2nd year undergraduate students who are following BEng (Hons) Software Engineering degree program at Informatics Institute of Technology (IIT),
-                    associated with the University of Westminster
-                </Text>
+        <ImageBackground
+            style={styles.background}
+            source={require("../../img/Background.png")}>
 
-                <Text style = {styles.head2}>
-                    Development Team
-                </Text>
+            <SafeAreaView style={styles.about}>
+                {/* Header Content */}
+                <View style={styles.header}>
+                    <Text style={styles.headerText}>
+                        About Us
+                    </Text>
+                    <Text style={styles.headerContent}>
+                        VICTRIC is a group of 2nd year undergraduate students who are following BEng (Hons) Software Engineering degree program at Informatics Institute of Technology (IIT),
+                        associated with the University of Westminster.
+                    </Text>
+                </View>
 
-                <Text style = {styles.tm1}>
-                    Tharuka {'\n'} Amarasinghe
-                </Text>
+                {/* Sub Header Content */}
+                <View style={styles.subHeader}>
+                    <Text style={styles.subHeaderText}>
+                        Developer Team
+                    </Text>
 
-                <Text style = {styles.tm2}>
-                    Ranul {'\n'} Hewage
-                </Text>
-
-                <Text style = {styles.tm3}>
-                    Imesh {'\n'} Herath
-                </Text>
-
-                <Text style = {styles.tm4}>
-                    Vihanga {'\n'} Palihakkara
-                </Text>
-
-                <Text style = {styles.tm5}>
-                    Chathumi {'\n'} Rubasinghe
-                </Text>
-
-                <Text style = {styles.tm6}>
-                    Isuka {'\n'} Premathilake
-                </Text>
+                    {/*pass the team names and the images from the array*/}
+                    <View style={styles.subHeaderContent}>
+                        {teamDetails.map((item, index) => {
+                            const names = item?.name.split(" ")
+                            return (
+                                <View key={index} style={styles.card}>
+                                    <Image style={styles.devImg} source={{ uri: item.imageUrl }} />
+                                    <Text style={styles.teamName}>{names[0]}</Text>
+                                    <Text style={styles.teamName}>{names[1]}</Text>
+                                </View>
+                            )
+                        })}
+                    </View>
+                </View>
             </SafeAreaView>
-            
         </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
-
-    about: {
-        flex: 1,
-        overflow: 'visible',
-    },
-
     background: {
         flex: 1,
-        justifyContent: 'center',
         resizeMode: 'contain',
         height: '100%',
         width: '100%',
     },
-
-    head: {
+    about: {
         flex: 1,
-        textAlign: 'center',
-        fontWeight: 'bold',
-        color: 'black',
+        marginHorizontal: 15,
+        marginTop: '7%',
+        marginBottom: 0,
+    },
+    header: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    headerText: {
         fontSize: 20,
-        marginTop: '13%',
-    },
-
-    head2: {
-        flex: 1,
-        textAlign: 'center',
         fontWeight: 'bold',
-        color: 'black',
-        fontSize: 20,
-        marginTop: '30%',
-        marginBottom: '70%',
+        color: '#000',
+        marginBottom: 10
     },
-
-    txt: {
-        flex: 1,
-        textAlign: 'justify',
-        marginTop: '25%',
-        marginBottom: '55%',
-        padding: '5%',
-        fontSize: 17,
-        color: 'black',
-        position: 'absolute',
-    },
-
-    tm1: {
-        flex:1,
-        textAlign: 'center',
-        marginLeft: '2%',
-        marginTop: '109.5%',
-        marginBottom: '100%',
+    headerContent: {
+        color: '#000',
         fontSize: 16,
-        color: 'black',
-        position: 'absolute',
+        textAlign: 'center'
     },
-
-    tm2: {
-        flex:1,
-        textAlign: 'center',
-        marginLeft: '32%',
-        marginTop: '109.5%',
-        marginBottom: '100%',
-        fontSize: 16,
-        color: 'black',
-        position: 'absolute',
+    subHeader: {
+        marginTop: '18%', // adjust
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-
-    tm3: {
-        flex:1,
-        textAlign: 'center',
-        marginLeft: '70%',
-        marginTop: '109.5%',
-        marginBottom: '100%',
-        fontSize: 16,
-        color: 'black',
-        position: 'absolute',
+    subHeaderText: {
+        fontSize: 18,
+        color: '#000',
+        fontWeight: 'bold',
+        marginBottom: 15
     },
-
-    tm4: {
-        flex:1,
-        textAlign: 'center',
-        marginLeft: '2%',
-        marginTop: '148%',
-        marginBottom: '100%',
-        fontSize: 16,
-        color: 'black',
-        position: 'absolute',
+    subHeaderContent: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
     },
-
-    tm5: {
-        flex:1,
-        textAlign: 'center',
-        marginLeft: '32%',
-        marginTop: '148%',
-        marginBottom: '100%',
-        fontSize: 16,
-        color: 'black',
-        position: 'absolute',
+    card: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '33%',
+        height: '44%'
     },
-
-    tm6: {
-        flex:1,
-        textAlign: 'center',
-        marginLeft: '70%',
-        marginTop: '148%',
-        marginBottom: '100%',
-        fontSize: 16,
-        color: 'black',
-        position: 'absolute',
+    devImg: {
+        height: 50,
+        width: 50,
+        borderRadius: 50,
+        overflow: 'hidden',
+        borderWidth: 1,
+        borderColor: 'green',
     },
-
-
+    teamName: {
+        color: '#000'
+    }
 })
 export default About;
