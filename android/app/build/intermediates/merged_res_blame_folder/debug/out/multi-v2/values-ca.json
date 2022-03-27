@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Vihanga\\Documents\\react\\backup\\NAAGA\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
+            "outputFile": "C:\\Users\\Vihanga\\Documents\\react\\NAAGA\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Vihanga\\.gradle\\caches\\transforms-3\\dae511b76fc5abe0b43b7dfd722fa90e\\transformed\\jetified-play-services-base-17.6.0\\res\\values-ca\\values.xml",
