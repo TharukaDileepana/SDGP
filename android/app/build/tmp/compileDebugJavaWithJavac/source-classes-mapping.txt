@@ -1,0 +1,14 @@
+com/naaga/MainActivity.java
+ com.naaga.MainActivity
+com/naaga/BuildConfig.java
+ com.naaga.BuildConfig
+com/naaga/ReactNativeFlipper.java
+ com.naaga.ReactNativeFlipper
+ com.naaga.ReactNativeFlipper$1
+ com.naaga.ReactNativeFlipper$2
+ com.naaga.ReactNativeFlipper$2$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/naaga/MainApplication.java
+ com.naaga.MainApplication
+ com.naaga.MainApplication$1
