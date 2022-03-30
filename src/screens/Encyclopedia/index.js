@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ImageBackground, SafeAreaView, StyleSheet, View, Text, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
-{/*created an array list for the Snakes names*/}
+{/*created an array list for the Snakes names*/ }
 const snakes = [
     {
         id: 1,
@@ -107,12 +107,11 @@ const snakes = [
 ]
 
 
-const Encyclopedia = ({navigation}) => {
+const Encyclopedia = ({ navigation }) => {
     return (
         <ImageBackground
             style={styles.background}
-            source={require("../../img/Encyclopedia.png")}
-        >
+            source={require("../../img/Encyclopedia.png")}>
             <SafeAreaView>
                 <ScrollView>
                     <Text style={styles.topic}> Select the Snake {"\n"} </Text>
@@ -122,10 +121,10 @@ const Encyclopedia = ({navigation}) => {
                         const names = item?.name.split("\n")
                         return (
                             <TouchableOpacity onPress={() => navigation.navigate('Result')}>
-                            <View key={index} style={styles.btnContainer}>
-                                <Text style={styles.btnText}>{names[0]}</Text>
-                                <Text style={styles.btnText}>{names[1]}</Text>
-                            </View>
+                                <View key={index} style={styles.btnContainer}>
+                                    <Text style={styles.btnText}>{names[0]}</Text>
+                                    <Text style={styles.btnText}>{names[1]}</Text>
+                                </View>
                             </TouchableOpacity>
                         )
                     })}
@@ -149,7 +148,7 @@ const styles = StyleSheet.create({
         color: '#000',
         fontSize: 20,
         textAlign: 'center',
-        marginBottom: 10,
+        marginTop: 20,
         fontWeight: 'bold'
     },
 

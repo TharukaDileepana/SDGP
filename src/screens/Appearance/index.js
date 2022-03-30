@@ -5,14 +5,14 @@ import { ModalPickerQ1 } from '../../../components/ModalPickerQ1';
 import { ModalPickerQ2 } from '../../../components/ModalPickerQ2';
 import { ModalPickerQ3 } from '../../../components/ModalPickerQ3';
 
-const Appearance = ({navigation}) => {
+const Appearance = ({ navigation }) => {
 
-    {/*add a state to the answer dropdown*/}
+    {/*add a state to the answer dropdown*/ }
     const [chooseDataQ1, setchooseDataQ1] = useState('Select Pattern');
     const [chooseDataQ2, setchooseDataQ2] = useState('Select Head Shape');
     const [chooseDataQ3, setchooseDataQ3] = useState('Select Skin Colour');
 
-    {/*when user click the answer dropdown, above states will hide and show the answers*/}
+    {/*when user click the answer dropdown, above states will hide and show the answers*/ }
     const [isModelVisibleQ1, setisModelVisibleQ1] = useState(false)
     const [isModelVisibleQ2, setisModelVisibleQ2] = useState(false)
     const [isModelVisibleQ3, setisModelVisibleQ3] = useState(false)
@@ -49,29 +49,29 @@ const Appearance = ({navigation}) => {
             source={require("../../img/Background.png")} >
 
             <SafeAreaView style={styles.container}>
-                {/*Header content*/}    
+                {/*Header content*/}
                 <Text style={styles.topic}>Answer the below questions to identify the snake{"\n"} </Text>
 
-                {/*1st question*/}    
+                {/*1st question*/}
                 <Text style={styles.q1}>1. What kind of pattern does the snake have?</Text>
                 <Text style={styles.ans}
-                    onPress={() => changeModalVisibilityQ1(true)}>  {/*get the answers as a dropdown*/}   
+                    onPress={() => changeModalVisibilityQ1(true)}>  {/*get the answers as a dropdown*/}
                     {chooseDataQ1}
                 </Text>
 
                 <Text style={styles.q1}>{"\n"}2. What is the shape of the Head?</Text>
                 <Text style={styles.ans}
-                    onPress={() => changeModalVisibilityQ2(true)}>  {/*get the answers as a dropdown*/}  
+                    onPress={() => changeModalVisibilityQ2(true)}>  {/*get the answers as a dropdown*/}
                     {chooseDataQ2}
                 </Text>
 
                 <Text style={styles.q1}>{"\n"}3. What is the skin colour of the snake?</Text>
                 <Text style={styles.ans}
-                    onPress={() => changeModalVisibilityQ3(true)}>  {/*get the answers as a dropdown*/}  
+                    onPress={() => changeModalVisibilityQ3(true)}>  {/*get the answers as a dropdown*/}
                     {chooseDataQ3}
                 </Text>
 
-                {/*get the model picker for the dropdown*/}  
+                {/*get the model picker for the dropdown*/}
                 <Modal
                     transparent={true}
                     animationType={'fade'}
@@ -107,13 +107,10 @@ const Appearance = ({navigation}) => {
                         setDataQ3={setDataQ3}
                     />
                 </Modal>
-                
-                {/*submit button*/}  
-                <TouchableOpacity onPress={() => navigation.navigate('Result')}>
-                    <View style={styles.btnContainer}>
-                        <Text style={styles.btnText}> Submit </Text>
-                    </View>
 
+                {/*submit button*/}
+                <TouchableOpacity style={styles.btnContainer} onPress={() => navigation.navigate('Result')}>
+                        <Text style={styles.btnText}> Submit </Text>
                 </TouchableOpacity>
             </SafeAreaView>
         </ImageBackground>
@@ -132,8 +129,8 @@ const styles = StyleSheet.create({
         color: '#000',
         fontSize: 20,
         textAlign: 'center',
-        marginBottom: 10,
-        fontWeight: 'bold'
+        marginTop: 20,
+        fontWeight: 'bold',
     },
 
     q1: {
@@ -164,7 +161,7 @@ const styles = StyleSheet.create({
         height: 40,
         width: 150,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignSelf: 'center',
         borderRadius: 50,
         backgroundColor: '#4EA582'
     },
@@ -173,7 +170,8 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: 16,
+        textAlign: 'center'
     }
 
 })
