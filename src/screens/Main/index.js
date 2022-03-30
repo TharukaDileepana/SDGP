@@ -55,8 +55,8 @@ const Main = ({navigation}) => {
             <SafeAreaView style={styles.area}>
                 <TouchableOpacity style={styles.btn1} onPress={takePhoto}><Text style={styles.name1}>Take a Picture</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.btn2} onPress={choosePhoto}><Text style={styles.name1}>Upload an Image</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.btn2}><Text style={styles.name1}>Appearance</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.btn2}><Text style={styles.name1}>Encyclopedia</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('Appearance')}><Text style={styles.name1}>Appearance</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('Encyclopedia')}><Text style={styles.name1}>Encyclopedia</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.btn3} onPress={() => navigation.navigate('About')}><Text style={styles.name2}>About Us</Text></TouchableOpacity>
             </SafeAreaView>
         </ImageBackground>
