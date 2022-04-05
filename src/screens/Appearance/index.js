@@ -42,6 +42,10 @@ const Appearance = ({ navigation }) => {
         setchooseDataQ3(optionQ3)
     }
 
+    const onPressSubmit = () => {
+        console.log("foo");
+    }
+
 
     return (
         <ImageBackground
@@ -109,8 +113,8 @@ const Appearance = ({ navigation }) => {
                 </Modal>
 
                 {/*submit button*/}
-                <TouchableOpacity style={styles.btnContainer} onPress={() => navigation.navigate('Result')}>
-                        <Text style={styles.btnText}> Submit </Text>
+                <TouchableOpacity style={styles.btnContainer} onPress={() => onPressSubmit}>
+                        <Text style={styles.btnText} onPress={() => navigation.push('Result')}> Submit </Text>
                 </TouchableOpacity>
             </SafeAreaView>
         </ImageBackground>

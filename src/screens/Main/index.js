@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     area: {
         flex: 1,
         overflow: 'visible',
+        alignSelf: 'stretch',
     },
 
     btn1: {
