@@ -114,7 +114,7 @@ const Appearance = ({ navigation }) => {
 
                 {/*submit button*/}
                 <TouchableOpacity style={styles.btnContainer} onPress={() => onPressSubmit}>
-                        <Text style={styles.btnText} onPress={() => navigation.push('Result')}> Submit </Text>
+                    <Text style={styles.btnText} onPress={() => navigation.push('Result')}> Submit </Text>
                 </TouchableOpacity>
             </SafeAreaView>
         </ImageBackground>

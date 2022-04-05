@@ -3,7 +3,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { ImageBackground, Text, StyleSheet, SafeAreaView, TouchableOpacity, Alert, BackHandler } from 'react-native'
 import ImagePicker from 'react-native-image-crop-picker';
 
-const Main = ({navigation}) => {
+const Main = ({ navigation }) => {
 
     useFocusEffect(
         React.useCallback(() => {
@@ -29,24 +29,24 @@ const Main = ({navigation}) => {
         }, []),
     );
 
-    const takePhoto = () =>{
+    const takePhoto = () => {
         ImagePicker.openCamera({
             width: 300,
             height: 400,
             cropping: true,
-          }).then(image => {
+        }).then(image => {
             console.log(image);
-          });
+        });
     }
 
-    const choosePhoto = () =>{
+    const choosePhoto = () => {
         ImagePicker.openPicker({
             width: 300,
             height: 400,
             cropping: true
-          }).then(image => {
+        }).then(image => {
             console.log(image);
-          });
+        });
     }
 
 
