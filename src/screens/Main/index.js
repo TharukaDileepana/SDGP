@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useFocusEffect } from '@react-navigation/native';
-import { ImageBackground, Text, StyleSheet, SafeAreaView, TouchableOpacity, Alert, BackHandler, Image } from 'react-native'
+import { ImageBackground, Text, StyleSheet, SafeAreaView, TouchableOpacity, Alert, BackHandler} from 'react-native'
 import ImagePicker from 'react-native-image-crop-picker';
 
 const Main = ({ navigation }) => {
@@ -29,8 +29,6 @@ const Main = ({ navigation }) => {
         }, []),
     );
 
-    const [image, setImage] = useState('https://www.meme-arsenal.com/memes/7794ba0a0da3a9d7216dbfaeaa64ff8d.jpg');
-
     const takePhoto = () => {
         ImagePicker.openCamera({
             width: 224,
@@ -58,7 +56,6 @@ const Main = ({ navigation }) => {
     return (
         <ImageBackground style={styles.bgi} source={require("../../img/Background.png")}>
             <SafeAreaView style={styles.area}>
-                <Image style={styles.img} source={{uri: image}}></Image>
                 <TouchableOpacity style={styles.btn1} onPress={takePhoto}><Text style={styles.name1}>Take a Picture</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.btn2} onPress={choosePhoto}><Text style={styles.name1}>Upload an Image</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('Appearance')}><Text style={styles.name1}>Appearance</Text></TouchableOpacity>
@@ -118,16 +115,6 @@ const styles = StyleSheet.create({
     bgi: {
         width: '100%',
         height: '100%',
-    },
-    img: {
-        width: '45%',
-        height: '20%',
-        marginTop: '8%',
-        marginLeft: "8%",
-        borderTopRightRadius: 20,
-        borderTopLeftRadius: 20,
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20,
     },
 })
 
