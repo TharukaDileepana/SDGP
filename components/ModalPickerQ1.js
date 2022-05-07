@@ -64,7 +64,8 @@ const styles = StyleSheet.create ({
     },
 
     optionQ1: {
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        
     },
 
     text: {
@@ -72,6 +73,7 @@ const styles = StyleSheet.create ({
         fontSize: 20,
         fontWeight: 'bold',
         borderBottomWidth: 1,
+        color: "#000"
     }
 })
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 import { ImageBackground, SafeAreaView, StyleSheet, View, Text, Modal } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { ModalPickerQ1 } from '../../../components/ModalPickerQ1';
@@ -17,6 +18,7 @@ const Appearance = ({ navigation }) => {
     const [isModelVisibleQ2, setisModelVisibleQ2] = useState(false)
     const [isModelVisibleQ3, setisModelVisibleQ3] = useState(false)
 
+    const [submitBtnText, setSubmitBtnText] = useState("Submit")
 
     const changeModalVisibilityQ1 = (bool) => {
         setisModelVisibleQ1(bool)
@@ -42,6 +44,29 @@ const Appearance = ({ navigation }) => {
         setchooseDataQ3(optionQ3)
     }
 
+    const onPress = () => {
+        setSubmitBtnText("Loading...")
+        const userInput = {
+            pattern: chooseDataQ1,
+            headShape: chooseDataQ2,
+            color: chooseDataQ3,
+        }
+        console.log(userInput)
+        axios.post("https://naaga-api.herokuapp.com/snake/find", userInput)
+        .then(res => {
+            if (res?.data?.status) {
+                console.log(res?.data?.data[0])
+                navigation.navigate('Result', { data: res?.data?.data[0] })
+            }
+        })
+        .catch(err => {
+            console.log(err)
+            navigation.navigate('Result', { data: null })
+        })
+        .finally(() => {
+            setSubmitBtnText("Submit")
+        })
+    }
 
     return (
         <ImageBackground
@@ -108,9 +133,8 @@ const Appearance = ({ navigation }) => {
                     />
                 </Modal>
 
-                {/*submit button*/}
-                <TouchableOpacity style={styles.btnContainer} onPress={() => navigation.navigate('Result')}>
-                        <Text style={styles.btnText}> Submit </Text>
+                <TouchableOpacity style={styles.btnContainer}>
+                        <Text style={styles.btnText} onPress={() => onPress()}>{submitBtnText}</Text>
                 </TouchableOpacity>
             </SafeAreaView>
         </ImageBackground>

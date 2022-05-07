@@ -68,6 +68,7 @@ const styles = StyleSheet.create ({
         fontSize: 20,
         fontWeight: 'bold',
         borderBottomWidth: 1,
+        color: "#000"
     }
 })
 
