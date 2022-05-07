@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ImageBackground, SafeAreaView, StyleSheet, View, Text, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -26,9 +26,9 @@ const Encyclopedia = ({ navigation }) => {
                     <Text style={styles.topic}> Select the Snake {"\n"} </Text>
                     {snakes?.map(item => {
                         return (
-                            <TouchableOpacity onPress={() => navigation.navigate('Result')}>
+                            <TouchableOpacity>
                                 <View key={item?._id} style={styles.btnContainer}>
-                                    <Text style={styles.btnText}>{item?.name}</Text>
+                                    <Text style={styles.btnText} onPress={() => navigation.navigate('Result', { data: item })}>{item?.name}</Text>
                                 </View>
                             </TouchableOpacity>
                         )
