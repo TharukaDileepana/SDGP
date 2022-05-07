@@ -16,7 +16,7 @@ const teamDetails = [
     {
         id: 3,
         name: "Imesh Herath",
-        imageUrl: "https://scontent.fcmb3-2.fna.fbcdn.net/v/t1.6435-9/169871005_2775027736082537_8186804939107896902_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=174925&_nc_eui2=AeH-Z28PPf5U5jeW98K8SFTQtFk-x4PKBX60WT7Hg8oFfjJPYAiE15nIm0OHtaiV4NZSafM_bX5cxxuQADgSUPdQ&_nc_ohc=EZ_iMs5EpKQAX9lpcBG&_nc_ht=scontent.fcmb3-2.fna&oh=00_AT_3Neu3V6Ivd2Jl6wSaw-C7Ndy0k_TxnWzFY2OBqh4DpQ&oe=626086EB"
+        imageUrl: "https://media-exp1.licdn.com/dms/image/C5603AQFJNlHbpIx8iA/profile-displayphoto-shrink_800_800/0/1651860931936?e=1657152000&v=beta&t=mSR-ohYy-9HDOcjkZOsMinn29u-r-dtA8R7ctPCqc1k"
     },
     {
         id: 4,
