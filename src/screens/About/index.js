@@ -21,7 +21,7 @@ const teamDetails = [
     {
         id: 4,
         name: "Vihanga Palihakkara",
-        imageUrl: "https://media-exp1.licdn.com/dms/image/D4E03AQE0HU4CMegbOQ/profile-displayphoto-shrink_800_800/0/1648024229984?e=1653523200&v=beta&t=kP6ks84Kp2OnjLDN4Rtp4PjgaWyFg64TWj72BBra3Xg"
+        imageUrl: "https://media-exp1.licdn.com/dms/image/C5603AQG-I0_lgeErmw/profile-displayphoto-shrink_800_800/0/1652239764098?e=1658361600&v=beta&t=1fln-jY6AU3a8iUMjc01nXKCnjnoC0pnsmB7aeKKwcg"
     },
     {
         id: 5,
